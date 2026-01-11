@@ -126,3 +126,33 @@ plt.show()
 - Excel shows a notable rise in demand beginning in September, eventually surpassing Python and Tableau by year-end.
 - Python and Tableau maintain relatively stable demand with moderate fluctuations, reinforcing their importance for data analyst roles.
 - Power BI, while less frequently requested overall, exhibits a modest upward trend toward the end of the year, indicating growing relevance.
+
+## 3. How well do jobs and skills pay for Data Analysts?
+
+To assess compensation trends, the analysis focuses exclusively on job postings based in the United States and evaluates median annual salaries. As an initial step, I examined salary distributions across commonly listed data roles—such as Data Analyst, Data Scientist, and Data Engineer—to understand how pay levels compare across positions and seniority levels. This provided a foundation for identifying the roles and skill sets associated with the highest earnings. 
+
+View my notebook with detailed steps here: [4_Salary_Analysis](Python_Project/4_Salary_Analysis.ipynb).
+
+### Visualize Data 
+
+```python
+sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
+
+ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+plt.show()
+
+```
+
+### Results
+
+![Salary Distributions of Data Jobs in the US](Python_Project/Images/salary_dist_US.png)  
+*Box plot illustrating the distribution of annual salaries across the top six data job titles in the U.S.*
+
+### Insights
+
+- Salary ranges vary significantly by role and seniority. Senior Data Scientist positions demonstrate the highest earning potential, with salaries reaching up to $600K, underscoring the premium placed on advanced expertise and experience.
+
+- Senior Data Scientist and Senior Data Engineer roles exhibit a substantial number of high-end outliers, suggesting that specialized skills, leadership responsibilities, or niche expertise can command exceptional compensation. In contrast, Data Analyst roles show more consistent salary ranges with fewer extreme outliers.
+
+- Median compensation increases with both seniority and specialization. Senior-level positions not only offer higher median salaries but also display greater variability, reflecting broader differences in responsibility, scope, and organizational impact.
