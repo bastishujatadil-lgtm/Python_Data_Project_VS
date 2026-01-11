@@ -156,3 +156,38 @@ plt.show()
 - Senior Data Scientist and Senior Data Engineer roles exhibit a substantial number of high-end outliers, suggesting that specialized skills, leadership responsibilities, or niche expertise can command exceptional compensation. In contrast, Data Analyst roles show more consistent salary ranges with fewer extreme outliers.
 
 - Median compensation increases with both seniority and specialization. Senior-level positions not only offer higher median salaries but also display greater variability, reflecting broader differences in responsibility, scope, and organizational impact.
+
+### Highest Paid & Most Demanded Skills for Data Analysts
+
+In this stage of the analysis, I narrowed the scope to focus exclusively on data analyst roles. The objective was to compare the skills associated with the highest median salaries against those most frequently requested in job postings. To illustrate this comparison, I used two separate bar charts—one highlighting compensation and the other highlighting demand.
+
+### Visualize Data
+
+```python
+
+fig, ax = plt.subplots(2, 1)  
+
+# Top 10 Highest Paid Skills for Data Analysts
+sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
+
+# Top 10 Most In-Demand Skills for Data Analystsr')
+sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
+
+plt.show()
+
+```
+
+### Results
+Below is a comparison of the highest-paying and most in-demand skills for data analysts in the U.S. job market:
+
+![The Highest Paid & Most In-Demand Skills for Data Analysts in the US](Python_Project/Images/highest_paid_vs_most_demanded_skills.png)
+
+*Bar charts illustrating the top-paying skills and the most frequently requested skills for data analysts in the U.S.*
+
+### Insights:
+
+- The top chart indicates that specialized technical skills—such as dplyr, Bitbucket, and GitLab—are linked to higher median salaries, with some roles offering compensation approaching $200K. This suggests that advanced or niche technical expertise can significantly enhance earning potential.
+
+- The bottom chart reveals that foundational tools, including Excel, PowerPoint, and SQL, remain the most in-demand skills despite offering comparatively lower salaries. These skills are essential for broad employability in data analyst roles.
+
+- A clear distinction exists between skills that command higher pay and those that are most widely requested. To maximize career growth, data analysts should aim to develop a balanced skill set that combines specialized, high-paying competencies with core, in-demand tools.
